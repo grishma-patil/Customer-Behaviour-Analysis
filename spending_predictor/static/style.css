@@ -1,0 +1,110 @@
+/* Button Styling */
+.btn-outline-secondary {
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Prediction Graph Styling */
+.prediction-graph {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.graph-iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+/* Set a consistent height for all cards */
+.fixed-card {
+    height: 460px; /* Adjust height to accommodate larger images */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Increase size and center-align the images */
+.fixed-img {
+    height: 320px; /* Increase height for better readability */
+    object-fit: contain; /* Ensures image fits without distortion */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centers image both horizontally and vertically */
+}
+
+/* Center-align the card titles and descriptions */
+.card-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px; /* Minimal space below title */
+}
+
+/* Adjust the description and reduce spacing */
+.card-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px; /* Reduced spacing below description */
+}
+
+
+/* Style for graph container */
+.graph-container {
+    position: relative;
+    cursor: pointer; /* Indicates interactivity */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling */
+}
+
+/* Hover effect to preview */
+.graph-container:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    z-index: 2; /* Ensures the graph appears above other elements */
+}
+
+/* Fullscreen zoom effect on click */
+.fullscreen-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%; /* Adjust image size to fit the viewport */
+    max-height: 90%;
+    border: 3px solid white; /* Add a border for better visibility */
+    border-radius: 10px;
+}
+
+/* Close button for fullscreen view */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 11;
+}
+
+.close-btn:hover {
+    background: #f00;
+    color: white;
+}
