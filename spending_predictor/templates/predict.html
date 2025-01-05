@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="card-title">Total Spending Predictor</h2>
+    <p class="text-center text-muted mb-4">Enter the values below to predict total spending</p>
+    <form id="predict-form" class="mt-4">
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" id="age" class="form-control" placeholder="Enter age">
+        </div>
+        <div class="mb-3">
+            <label for="income" class="form-label">Income</label>
+            <input type="number" id="income" class="form-control" placeholder="Enter income">
+        </div>
+        <div class="mb-3">
+            <label for="numwebpurchases" class="form-label">Number of Web Purchases</label>
+            <input type="number" id="numwebpurchases" class="form-control" placeholder="Enter number of web purchases">
+        </div>
+        <div class="mb-3">
+            <label for="numcatalogpurchases" class="form-label">Number of Catalog Purchases</label>
+            <input type="number" id="numcatalogpurchases" class="form-control" placeholder="Enter number of catalog purchases">
+        </div>
+        <div class="mb-3">
+            <label for="numstorepurchases" class="form-label">Number of Store Purchases</label>
+            <input type="number" id="numstorepurchases" class="form-control" placeholder="Enter number of store purchases">
+        </div>
+        <button type="button" class="btn btn-secondary w-100" onclick="getPrediction()">Predict</button>
+    </form>
+    <div id="prediction-result" class="mt-4 text-center text-success fw-bold"></div>
+    <hr class="my-4">
+    <h5 class="text-center text-muted">Prediction Visualization</h5>
+    <div id="graph-container">
+        <iframe id="interactive-graph" src="/static/actual_vs_predicted.html" class="graph-iframe" title="Interactive Graph"></iframe>
+    </div>
+    <hr class="my-4">
+    <div class="text-center">
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('age')">Age</button>
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('income')">Income</button>
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('numstorepurchases')">Store Purchases</button>
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('numcatalogpurchases')">Catalog Purchases</button>
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('numwebpurchases')">Web Purchases</button>
+        <button class="btn btn-outline-secondary mx-1" onclick="changeGraph('prediction')">Actual vs Predicted Spending</button>
+    </div>
+</div>
+<div id="prediction-result" class="mt-4 text-center text-success fw-bold"></div>
+
+<!-- Add Recommendations Based on Predicted Spending -->
+<div id="recommendation" class="alert alert-info mt-3" style="display:none;">
+    Based on the predicted spending, we suggest targeting the customer with premium offers!
+</div>
+
+<script>
+    function showRecommendation(prediction) {
+        if (prediction > 1000) { // Adjust threshold as needed
+            document.getElementById("recommendation").style.display = "block";
+        }
+    }
+</script>
+<script>
+    async function getPrediction() {
+        const data = {
+            age: document.getElementById("age").value,
+            income: document.getElementById("income").value,
+            numwebpurchases: document.getElementById("numwebpurchases").value,
+            numcatalogpurchases: document.getElementById("numcatalogpurchases").value,
+            numstorepurchases: document.getElementById("numstorepurchases").value
+        };
+        const response = await fetch("/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        const prediction = parseFloat(result.total_spending.replace(/[$,]/g, "")); // Ensure prediction is a number
+
+    document.getElementById("prediction-result").innerText = `Predicted Total Spending: ${result.total_spending}`;
+    
+    // Call recommendation logic
+    showRecommendation(prediction);
+    }
+
+    function changeGraph(graphType) {
+        const graphMap = {
+            age: "/static/age_vs_predicted.html",
+            income: "/static/income_vs_predicted.html",
+            numstorepurchases: "/static/numberofstorepurchase_vs_predicted.html",
+            numcatalogpurchases: "/static/numberofcatalogchase_vs_predicted.html",
+            numwebpurchases: "/static/numberofwebpurchase_vs_predicted.html",
+            prediction: "/static/actual_vs_predicted.html" // Actual vs Predicted graph
+        };
+        document.getElementById("interactive-graph").src = graphMap[graphType];
+    }
+</script>
+{% endblock %}

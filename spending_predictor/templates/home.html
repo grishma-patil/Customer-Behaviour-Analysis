@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="card-title">Data Analysis</h2>
+    <p class="text-muted text-center mb-4">Explore insights and visualizations from the data analysis.</p>
+
+    <!-- Graph Rows -->
+    <div class="row mb-4">
+        <!-- Graph 1 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph1.png" class="card-img-top fixed-img" alt="Age Distribution">
+                <div class="card-body">
+                    <h5 class="card-title">Age Distribution</h5>
+                    <p class="card-text text-muted">Distribution of customers' age showing the concentration around middle-aged groups.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 2 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph2.png" class="card-img-top fixed-img" alt="Income Distribution">
+                <div class="card-body">
+                    <h5 class="card-title">Income Distribution</h5>
+                    <p class="card-text text-muted">Visualizing the distribution of customer incomes, highlighting skewness towards lower incomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 3 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph3.png" class="card-img-top fixed-img" alt="Total Spending Distribution">
+                <div class="card-body">
+                    <h5 class="card-title">Total Spending Distribution</h5>
+                    <p class="card-text text-muted">Examining the spread of customers' total spending to identify heavy spenders.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 4 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph4.png" class="card-img-top fixed-img" alt="Spending per Purchase">
+                <div class="card-body">
+                    <h5 class="card-title">Spending Per Purchase</h5>
+                    <p class="card-text text-muted">Analyzing average spending per purchase to highlight consumer behavior.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 5 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph5.png" class="card-img-top fixed-img" alt="Marital Status Distribution">
+                <div class="card-body">
+                    <h5 class="card-title">Age Distribution</h5>
+                    <p class="card-text text-muted">Distribution of customers' age. </p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 6 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph6.png" class="card-img-top fixed-img" alt="Education Levels">
+                <div class="card-body">
+                    <h5 class="card-title">Marital Status Distribution</h5>
+                    <p class="card-text text-muted">Breakdown of marital status, showing proportions of singles, married, etc.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 7 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph7.png" class="card-img-top fixed-img" alt="Income Segmentation">
+                <div class="card-body">
+                    <h5 class="card-title">Education Levels</h5>
+                    <p class="card-text text-muted">Distribution of education levels among customers, focusing on graduate and postgraduate proportions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 8 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph8.png" class="card-img-top fixed-img" alt="Income Segmentation">
+                <div class="card-body">
+                    <h5 class="card-title">Income Segmentation</h5>
+                    <p class="card-text text-muted">Categorizing customers into income segments (low, medium, high, very high).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 9 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph9.png" class="card-img-top fixed-img" alt="Spending Across Categories">
+                <div class="card-body">
+                    <h5 class="card-title">Spending Across Categories</h5>
+                    <p class="card-text text-muted">Visualizing spending on different product categories, with a focus on wines</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 10 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph10.png" class="card-img-top fixed-img" alt="Spending by Marital Status">
+                <div class="card-body">
+                    <h5 class="card-title">Spending by Marital Status</h5>
+                    <p class="card-text text-muted">Breakdown of spending patterns by marital status for different product categories.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 11 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph11.png" class="card-img-top fixed-img" alt="Spending Trends by Age and Income">
+                <div class="card-body">
+                    <h5 class="card-title">Spending Trends by Age and Income</h5>
+                    <p class="card-text text-muted">Scatter plot showing how total spending varies across age groups and income segments.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 12 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph12.png" class="card-img-top fixed-img" alt="Spending Per Purchase by Education Level">
+                <div class="card-body">
+                    <h5 class="card-title">Spending Per Purchase by Education Level</h5>
+                    <p class="card-text text-muted">Bar chart illustrating how spending per purchase differs based on education levels.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 13 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph13.png" class="card-img-top fixed-img" alt="Purchases by Channel">
+                <div class="card-body">
+                    <h5 class="card-title">Purchases by Channel</h5>
+                    <p class="card-text text-muted">Bar chart visualizing the total purchases made via web, catalog, and in-store channels.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 14 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph14.png" class="card-img-top fixed-img" alt="Website Visits vs. Total Spending">
+                <div class="card-body">
+                    <h5 class="card-title">Website Visits vs. Total Spending</h5>
+                    <p class="card-text text-muted">Scatter plot depicting the relationship between the number of website visits and total spending.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 15 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph15.png" class="card-img-top fixed-img" alt="Recency of Purchases">
+                <div class="card-body">
+                    <h5 class="card-title">Recency of Purchases</h5>
+                    <p class="card-text text-muted">Histogram showing the frequency of purchases based on recency (days since last purchase).</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 16 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph16.png" class="card-img-top fixed-img" alt="Recency vs. Total Spending">
+                <div class="card-body">
+                    <h5 class="card-title">Recency vs. Total Spending</h5>
+                    <p class="card-text text-muted">Scatter plot analyzing how recency impacts total spending across income segments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 17 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph17.png" class="card-img-top fixed-img" alt="Response Rates for Campaigns">
+                <div class="card-body">
+                    <h5 class="card-title">Response Rates for Campaigns</h5>
+                    <p class="card-text text-muted">Bar chart highlighting the response rates for different marketing campaigns.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 18 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph18.png" class="card-img-top fixed-img" alt="Correlation Heatmap">
+                <div class="card-body">
+                    <h5 class="card-title">Correlation Heatmap</h5>
+                    <p class="card-text text-muted">Heatmap showing relationships between demographics, spending, and campaign responses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Graph 19 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph19.png" class="card-img-top fixed-img" alt="Elbow Method for Clusters">
+                <div class="card-body">
+                    <h5 class="card-title">Elbow Method for Clusters</h5>
+                    <p class="card-text text-muted">Line plot used to determine the optimal number of clusters for customer segmentation.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Graph 20 -->
+        <div class="col-md-6">
+            <div class="card shadow fixed-card">
+                <img src="/static/EDA_Graph20.png" class="card-img-top fixed-img" alt="Customer Segments by Spending">
+                <div class="card-body">
+                    <h5 class="card-title">Customer Segments by Spending</h5>
+                    <p class="card-text text-muted">Scatter plot showing clusters of customers based on their age and total spending.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
